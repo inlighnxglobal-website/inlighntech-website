@@ -803,7 +803,7 @@ function WhatsSpecial() {
                     {/* Image Section */}
                     <div className="relative h-64 lg:h-auto lg:w-3/5 lg:min-h-[450px] overflow-hidden flex items-center justify-center bg-gray-100">
                       <img 
-                        src="https://media.licdn.com/dms/image/v2/D5622AQHThJRGCWH1ig/feedshare-shrink_800/B56ZpUz2VqHIAg-/0/1762359474505?e=1766016000&v=beta&t=u7WKkssOLT5eUqZ42qFqScFf1gT6QISZrFfg3eYXwdM" 
+                        src="https://img.sanishtech.com/u/8f82f573c33db149e4a8762d3881ffb1.jpg" 
                         alt="Ideathon Winner"
                         className="w-full h-full object-contain lg:object-cover"
                         loading="lazy"

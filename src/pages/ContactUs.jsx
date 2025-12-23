@@ -21,7 +21,7 @@ function ContactUs() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    
+
     // Construct email body with form data
     const emailBody = `
 Name: ${formData.name}
@@ -33,17 +33,17 @@ Domain of Internship: ${formData.domain}
 Message:
 ${formData.message}
     `.trim()
-    
+
     // Encode the email body for URL
     const encodedBody = encodeURIComponent(emailBody)
-    const encodedSubject = encodeURIComponent('Contact Form Submission - InLighnX Global')
-    
+    const encodedSubject = encodeURIComponent('Contact Form Submission - Inlighntech')
+
     // Create mailto link
-    const mailtoLink = `mailto:inlighnxglobal@gmail.com?subject=${encodedSubject}&body=${encodedBody}`
-    
+    const mailtoLink = `mailto:inlighntech@gmail.com?subject=${encodedSubject}&body=${encodedBody}`
+
     // Open the email client
     window.location.href = mailtoLink
-    
+
     // Show success message
     setSubmitted(true)
     setTimeout(() => {
@@ -66,7 +66,7 @@ ${formData.message}
   const faqs = [
     {
       question: "What makes Inlighn tech different from other learning platforms?",
-      answer: "InLighnX Global stands out with its comprehensive internship programs that combine real-world projects, industry mentorship, and hands-on experience. We focus on practical skills development through live projects, ensuring our interns are job-ready upon completion. Our programs are designed in collaboration with industry experts and offer certificates that are recognized by leading companies."
+      answer: "Inlighntech stands out with its comprehensive internship programs that combine real-world projects, industry mentorship, and hands-on experience. We focus on practical skills development through live projects, ensuring our interns are job-ready upon completion. Our programs are designed in collaboration with industry experts and offer certificates that are recognized by leading companies."
     },
     {
       question: "How can I register for an internship?",
@@ -86,7 +86,7 @@ ${formData.message}
     },
     {
       question: "Is there any fee for the internship program?",
-      answer: "Please contact us directly through the contact form or email us at inlighnxglobal@gmail.com to get detailed information about program fees, payment plans, and any available scholarships or financial assistance options. We're committed to making quality education accessible to all."
+      answer: "Please contact us directly through the contact form or email us at inlighntech@gmail.com to get detailed information about program fees, payment plans, and any available scholarships or financial assistance options. We're committed to making quality education accessible to all."
     }
   ]
 
@@ -110,7 +110,7 @@ ${formData.message}
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-6 md:mb-8">
                 Contact Information
               </h2>
-              
+
               {/* Primary Contact Cards */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-6 mb-6 sm:mb-8">
                 <div className="group bg-white rounded-xl p-4 sm:p-5 md:p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-teal-300 hover:-translate-y-1">
@@ -127,7 +127,7 @@ ${formData.message}
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="group bg-white rounded-xl p-4 sm:p-5 md:p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-teal-300 hover:-translate-y-1">
                   <div className="flex items-start space-x-3 sm:space-x-4">
                     <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
@@ -163,15 +163,15 @@ ${formData.message}
               {/* Offices Section */}
               <div className="mb-4 sm:mb-6">
                 <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Our Offices</h3>
-                
+
                 <div className="space-y-3 sm:space-y-4 md:space-y-6">
                   {/* Corporate Office */}
-                  <div 
+                  <div
                     className="group bg-white rounded-xl p-4 sm:p-5 md:p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-purple-300 hover:-translate-y-1 relative"
                     onMouseEnter={() => setHoveredOffice('corporate')}
                     onMouseLeave={() => setHoveredOffice(null)}
                   >
-                    <div 
+                    <div
                       className="flex items-start space-x-3 sm:space-x-4 cursor-pointer"
                       onClick={() => setHoveredOffice(hoveredOffice === 'corporate' ? null : 'corporate')}
                     >
@@ -184,19 +184,18 @@ ${formData.message}
                       <div className="flex-1 min-w-0">
                         <h3 className="text-sm sm:text-base font-semibold text-gray-900 mb-1.5 sm:mb-2">Corporate Office</h3>
                         <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                          VO-301, WeWork Prestige Central, Ground Floor,<br className="hidden sm:block"/>
-                          38, Infantry Rd, Tasker Town,<br className="hidden sm:block"/>
-                          Shivaji Nagar, Bengaluru,<br className="hidden sm:block"/>
+                          VO-301, WeWork Prestige Central, Ground Floor,<br className="hidden sm:block" />
+                          38, Infantry Rd, Tasker Town,<br className="hidden sm:block" />
+                          Shivaji Nagar, Bengaluru,<br className="hidden sm:block" />
                           Karnataka 560001
                         </p>
                       </div>
                     </div>
-                    <div 
-                      className={`mt-4 rounded-lg overflow-hidden shadow-lg border border-gray-200 transition-all duration-500 ease-in-out transform ${
-                        hoveredOffice === 'corporate'
+                    <div
+                      className={`mt-4 rounded-lg overflow-hidden shadow-lg border border-gray-200 transition-all duration-500 ease-in-out transform ${hoveredOffice === 'corporate'
                           ? 'opacity-100 max-h-[400px] translate-y-0 scale-100 pointer-events-auto'
                           : 'opacity-0 max-h-0 -translate-y-4 scale-95 pointer-events-none overflow-hidden'
-                      }`}
+                        }`}
                       style={{ transition: 'opacity 0.5s ease-in-out, max-height 0.5s ease-in-out, transform 0.5s ease-in-out' }}
                     >
                       <iframe
@@ -214,12 +213,12 @@ ${formData.message}
                   </div>
 
                   {/* Lucknow Office */}
-                  <div 
+                  <div
                     className="group bg-white rounded-xl p-4 sm:p-5 md:p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-indigo-300 hover:-translate-y-1 relative"
                     onMouseEnter={() => setHoveredOffice('lucknow')}
                     onMouseLeave={() => setHoveredOffice(null)}
                   >
-                    <div 
+                    <div
                       className="flex items-start space-x-3 sm:space-x-4 cursor-pointer"
                       onClick={() => setHoveredOffice(hoveredOffice === 'lucknow' ? null : 'lucknow')}
                     >
@@ -232,19 +231,18 @@ ${formData.message}
                       <div className="flex-1 min-w-0">
                         <h3 className="text-sm sm:text-base font-semibold text-gray-900 mb-1.5 sm:mb-2">Lucknow Office</h3>
                         <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                          B1- 722, DLF MyPad,<br className="hidden sm:block"/>
-                          Gomti Nagar,<br className="hidden sm:block"/>
-                          Lucknow, Uttar Pradesh<br className="hidden sm:block"/>
+                          B1- 722, DLF MyPad,<br className="hidden sm:block" />
+                          Gomti Nagar,<br className="hidden sm:block" />
+                          Lucknow, Uttar Pradesh<br className="hidden sm:block" />
                           226010
                         </p>
                       </div>
                     </div>
-                    <div 
-                      className={`mt-4 rounded-lg overflow-hidden shadow-lg border border-gray-200 transition-all duration-500 ease-in-out transform ${
-                        hoveredOffice === 'lucknow'
+                    <div
+                      className={`mt-4 rounded-lg overflow-hidden shadow-lg border border-gray-200 transition-all duration-500 ease-in-out transform ${hoveredOffice === 'lucknow'
                           ? 'opacity-100 max-h-[400px] translate-y-0 scale-100 pointer-events-auto'
                           : 'opacity-0 max-h-0 -translate-y-4 scale-95 pointer-events-none overflow-hidden'
-                      }`}
+                        }`}
                       style={{ transition: 'opacity 0.5s ease-in-out, max-height 0.5s ease-in-out, transform 0.5s ease-in-out' }}
                     >
                       <iframe
@@ -262,12 +260,12 @@ ${formData.message}
                   </div>
 
                   {/* Registered Office */}
-                  <div 
+                  <div
                     className="group bg-white rounded-xl p-4 sm:p-5 md:p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-emerald-300 hover:-translate-y-1 relative"
                     onMouseEnter={() => setHoveredOffice('registered')}
                     onMouseLeave={() => setHoveredOffice(null)}
                   >
-                    <div 
+                    <div
                       className="flex items-start space-x-3 sm:space-x-4 cursor-pointer"
                       onClick={() => setHoveredOffice(hoveredOffice === 'registered' ? null : 'registered')}
                     >
@@ -280,19 +278,18 @@ ${formData.message}
                       <div className="flex-1 min-w-0">
                         <h3 className="text-sm sm:text-base font-semibold text-gray-900 mb-1.5 sm:mb-2">Registered Office</h3>
                         <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                          Opposite Swasti Hospital<br className="hidden sm:block"/>
-                          Anupam Nagar,<br className="hidden sm:block"/>
-                          Bareilly, Uttar Pradesh<br className="hidden sm:block"/>
+                          Opposite Swasti Hospital<br className="hidden sm:block" />
+                          Anupam Nagar,<br className="hidden sm:block" />
+                          Bareilly, Uttar Pradesh<br className="hidden sm:block" />
                           243001
                         </p>
                       </div>
                     </div>
-                    <div 
-                      className={`mt-4 rounded-lg overflow-hidden shadow-lg border border-gray-200 transition-all duration-500 ease-in-out transform ${
-                        hoveredOffice === 'registered'
+                    <div
+                      className={`mt-4 rounded-lg overflow-hidden shadow-lg border border-gray-200 transition-all duration-500 ease-in-out transform ${hoveredOffice === 'registered'
                           ? 'opacity-100 max-h-[400px] translate-y-0 scale-100 pointer-events-auto'
                           : 'opacity-0 max-h-0 -translate-y-4 scale-95 pointer-events-none overflow-hidden'
-                      }`}
+                        }`}
                       style={{ transition: 'opacity 0.5s ease-in-out, max-height 0.5s ease-in-out, transform 0.5s ease-in-out' }}
                     >
                       <iframe
@@ -319,7 +316,7 @@ ${formData.message}
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-5 sm:mb-6 md:mb-8">
                 Send us a Message
               </h2>
-              
+
               {submitted ? (
                 <div className="text-center py-8 sm:py-12">
                   <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full mb-4 sm:mb-6 animate-bounce">
@@ -364,7 +361,7 @@ ${formData.message}
                       />
                     </div>
                   </div>
-                  
+
                   <div>
                     <label htmlFor="domain" className="block text-sm font-semibold text-gray-700 mb-2">
                       Domain of Internship
@@ -380,7 +377,7 @@ ${formData.message}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all duration-200 outline-none text-gray-900 placeholder-gray-400"
                     />
                   </div>
-                  
+
                   <div>
                     <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
                       Message
@@ -396,7 +393,7 @@ ${formData.message}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all duration-200 outline-none resize-y text-gray-900 placeholder-gray-400"
                     ></textarea>
                   </div>
-                  
+
                   <button
                     type="submit"
                     className="w-full bg-gradient-to-r from-[#0F172A] to-[#1e293b] text-white font-semibold py-3 sm:py-3.5 px-6 rounded-lg hover:from-[#1e293b] hover:to-[#0F172A] transition-all duration-300 shadow-md hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2"
@@ -422,38 +419,35 @@ ${formData.message}
               Find answers to common questions about our internship programs
             </p>
           </div>
-          
+
           <div className="max-w-4xl mx-auto space-y-3 sm:space-y-4">
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className={`bg-white rounded-xl sm:rounded-2xl overflow-hidden transition-all duration-300 ${
-                  openFaq === index 
-                    ? 'shadow-2xl ring-2 ring-teal-500/20 scale-[1.01]' 
+                className={`bg-white rounded-xl sm:rounded-2xl overflow-hidden transition-all duration-300 ${openFaq === index
+                    ? 'shadow-2xl ring-2 ring-teal-500/20 scale-[1.01]'
                     : 'shadow-md hover:shadow-lg border border-gray-100'
-                }`}
+                  }`}
               >
                 <button
                   onClick={() => toggleFaq(index)}
                   className="w-full px-4 py-4 sm:px-6 sm:py-5 md:px-8 md:py-6 flex items-center justify-between text-left group hover:bg-gray-50 transition-all duration-200"
                 >
                   <div className="flex items-start gap-3 sm:gap-4 flex-1 min-w-0">
-                    <div className={`flex-shrink-0 w-2 h-2 rounded-full mt-2 sm:mt-2.5 transition-all duration-300 ${
-                      openFaq === index 
-                        ? 'bg-teal-500 scale-150' 
+                    <div className={`flex-shrink-0 w-2 h-2 rounded-full mt-2 sm:mt-2.5 transition-all duration-300 ${openFaq === index
+                        ? 'bg-teal-500 scale-150'
                         : 'bg-gray-300 group-hover:bg-teal-400'
-                    }`}></div>
+                      }`}></div>
                     <h3 className="font-semibold text-sm sm:text-base md:text-lg leading-relaxed text-white transition-colors duration-200 pr-2">
                       {faq.question}
                     </h3>
                   </div>
                   <div className="flex-shrink-0 ml-2 sm:ml-4">
                     <div
-                      className={`w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center transition-all duration-300 ${
-                        openFaq === index
+                      className={`w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center transition-all duration-300 ${openFaq === index
                           ? 'bg-teal-500 text-white rotate-180'
                           : 'bg-gray-100 text-gray-700 group-hover:bg-teal-500 group-hover:text-white rotate-0'
-                      }`}
+                        }`}
                     >
                       <svg
                         className="w-4 h-4 sm:w-5 sm:h-5"
@@ -471,13 +465,12 @@ ${formData.message}
                     </div>
                   </div>
                 </button>
-                
+
                 <div
-                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                    openFaq === index 
-                      ? 'max-h-[1000px] opacity-100' 
+                  className={`overflow-hidden transition-all duration-500 ease-in-out ${openFaq === index
+                      ? 'max-h-[1000px] opacity-100'
                       : 'max-h-0 opacity-0'
-                  }`}
+                    }`}
                 >
                   <div className="px-4 sm:px-6 md:px-8 pb-4 sm:pb-6 md:pb-8 pl-8 sm:pl-10 md:pl-12 lg:pl-14">
                     <div className="h-px bg-gradient-to-r from-teal-500/20 via-teal-300/30 to-transparent mb-4 sm:mb-5"></div>

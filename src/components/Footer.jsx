@@ -16,9 +16,9 @@ function Footer() {
           {/* Left Section - Logo and Description */}
           <div className="footer-section footer-about">
             <div className="footer-logo-wrapper">
-              <img src={logo} alt="InLighnX Global" className="footer-logo" />
+              <img src={logo} alt="Inlighntech" className="footer-logo" />
             </div>
-            <h3 className="footer-company-name">InLighnX Global Private Limited</h3>
+            <h3 className="footer-company-name">Inlighntech Private Limited</h3>
             <p className="footer-description">
               Gain real-world experience with our immersive internship programs in Cyber Security, Full Stack Development, Data Science, Data Analyst and in various tech domains. Learn today, lead tomorrow.
             </p>
@@ -125,7 +125,7 @@ function Footer() {
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                   <polyline points="22,6 12,13 2,6"></polyline>
                 </svg>
-                <a href="mailto:info@inlighnxglobal.com">info@inlighnxglobal.com</a>
+                <a href="mailto:info@inlighntech.com">info@inlighntech.com</a>
               </div>
             </div>
           </div>
@@ -134,7 +134,7 @@ function Footer() {
         {/* Footer Bottom */}
         <div className="footer-bottom">
           <p className="footer-copyright">
-            © {new Date().getFullYear()} InLighnX Global Private Limited. All rights reserved.
+            © {new Date().getFullYear()} Inlighntech Private Limited. All rights reserved.
           </p>
         </div>
       </div>

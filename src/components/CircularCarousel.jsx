@@ -30,30 +30,6 @@ const carouselData = [
     src: Aditya,
     linkedin: "https://www.linkedin.com/in/aditya-kumar-6604a8249", 
   },
-  // {
-  //   quote:
-  //     "The internship experience at InLighnX was exceptional! The mentorship and hands-on learning opportunities prepared me perfectly for my role at Meta as a Frontend Developer. I couldn't have asked for a better start to my career!",
-  //   name: "Sarah Johnson",
-  //   designation: "Placed at Meta | Frontend Developer",
-  //   src: man2,
-  //   linkedin: "", // Add LinkedIn profile URL here
-  // },
-  // {
-  //   quote:
-  //     "InLighnX's program gave me the confidence and skills needed to succeed. Thanks to the practical training and industry connections, I landed a position at Apple as an iOS Developer. This program truly changed my career trajectory!",
-  //   name: "Michael Chen",
-  //   designation: "Placed at Apple | iOS Developer",
-  //   src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
-  //   linkedin: "", // Add LinkedIn profile URL here
-  // },
-  // {
-  //   quote:
-  //     "The comprehensive curriculum and real-world projects at InLighnX were exactly what I needed. I'm now working at Netflix as a Backend Engineer, and I credit this program for my success. The support and guidance were outstanding!",
-  //   name: "Emily Rodriguez",
-  //   designation: "Placed at Netflix | Backend Engineer",
-  //   src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80",
-  //   linkedin: "", // Add LinkedIn profile URL here
-  // },
 ];
 
 export default function CircularCarousel() {

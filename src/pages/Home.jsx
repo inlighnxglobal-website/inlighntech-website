@@ -135,10 +135,10 @@ function Home() {
   // Who We Are Carousel - Memoized to prevent re-renders
   const whoWeAreCards = useMemo(() => [
     {
-      title: "About InLighnX Global (InLighn Tech)",
-      content: "At InlighnX Global, we believe that the future of education lies in bridging the gap between academic learning and industry needs. Founded with a passion for providing meaningful and immersive learning experiences, we offer internship programs that equip students and young professionals with practical skills in Full Stack Development, Data Science, and Project Management.",
+      title: "About InlighnTech",
+      content: "At InlighnTech, we believe that the future of education lies in bridging the gap between academic learning and industry needs. Founded with a passion for providing meaningful and immersive learning experiences, we offer internship programs that equip students and young professionals with practical skills in Full Stack Development, Data Science, and Project Management.",
       iconBg: "#14b8a6",
-      image: "https://www.inlighntech.com/wp-content/uploads/2023/07/img-meta6.jpg", // Add your custom image here
+      image: "https://img.sanishtech.com/u/30ceb6ed63a6654ed317b7337e8a7077.jpg", // Add your custom image here
       icon: (
         <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
@@ -154,7 +154,7 @@ function Home() {
       title: "Our Mission",
       content: "To empower students and young professionals by providing immersive, real-world learning experiences through tailored internship programs. We aim to equip our participants with the practical skills and confidence they need to succeed in the fast-evolving tech industry.",
       iconBg: "#ff6b35",
-      image: "https://www.inlighntech.com/wp-content/uploads/2023/07/img-meta5.jpg", // Add your custom image here
+      image: "https://img.sanishtech.com/u/4f56ec9db886a24cc29f288ceeb197d7.jpg", // Add your custom image here
       icon: (
         <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
@@ -397,13 +397,7 @@ function Home() {
               Transform Your Career with
             </h1>
             <h2 className={cn("home-company-name")}>
-              InLighnX
-            </h2>
-            <h2 className={cn("home-company-name")}>
-              Global Private
-            </h2>
-            <h2 className={cn("home-company-name")}>
-              Limited
+              InlighnTech
             </h2>
             <p className="home-description">
               Gain real-world experience with our immersive internship programs in Cyber Security, Full Stack Development, Data Science, Data Analyst and in various tech domains. Learn today, lead tomorrow.
@@ -414,7 +408,7 @@ function Home() {
             <TiltedCard
               imageSrc={titleimg}
               altText="E-Learning for Career Growth"
-              captionText="Empower Your Career with InlighnX Global"
+              captionText="Empower Your Career with InlighnTech"
               containerHeight="450px"
               containerWidth="350px"
               imageHeight="450px"
@@ -426,7 +420,7 @@ function Home() {
               displayOverlayContent={true}
               overlayContent={
                 <p className="tilted-card-demo-text text-white text-center font-semibold">
-                  "Learn. Grow. Succeed — Build your Career with InlighnX Global"
+                  "Learn. Grow. Succeed — Build your Career with InlighnTech"
                 </p>
               }
             />
@@ -568,7 +562,7 @@ function Home() {
                 <div className="code-window-content">
                   <div className="code-line">
                     <span className="code-keyword">const</span>
-                    <span className="code-text">InlighnXglobal</span>
+                    <span className="code-text">InlighnTech</span>
                     <span className="code-operator"> = </span>
                     <span className="code-text">()</span>
                     <span className="code-operator"> =&gt; </span>
@@ -677,7 +671,7 @@ function Home() {
           <div className="internship-content">
             <h2 className="internship-title">We Provide Best Internship For You</h2>
             <p className="internship-description">
-              At InLighnX Global (InLighn Tech), we believe that the future of education lies in bridging the gap between academic learning and industry needs. Founded with a passion for providing meaningful and immersive learning experiences, we offer internship programs that equip students and young professionals with practical skills in Full Stack Development, Data Science, and Project Management.
+              At InlighnTech, we believe that the future of education lies in bridging the gap between academic learning and industry needs. Founded with a passion for providing meaningful and immersive learning experiences, we offer internship programs that equip students and young professionals with practical skills in Full Stack Development, Data Science, and Project Management.
             </p>
             <button className="internship-know-more-button" onClick={() => navigate('/programs')}>Know More</button>
           </div>
@@ -845,7 +839,7 @@ function Home() {
 
                 <div className="space-y-4 text-gray-600">
                   <p className="leading-relaxed">
-                    Our organization, <span className="font-semibold text-gray-800">InLighnX Global Pvt Ltd (InLighn Tech)</span> was honored with the 
+                    Our organization, <span className="font-semibold text-gray-800">InlighnTech Pvt Ltd (Inlighn Tech)</span> was honored with the 
                     <span className="font-semibold text-[#14b8a6]"> "#Best_Emerging_EdTech_Startup_in_Tech_Training"</span> award at the 
                     Bharat Business Awards, presented by Ashneer Grover.
                   </p>

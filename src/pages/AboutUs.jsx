@@ -22,7 +22,7 @@ function AboutUs() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    
+
     // Construct email body with form data
     const emailBody = `
 Name: ${formData.name}
@@ -34,17 +34,17 @@ Domain of Internship: ${formData.domain}
 Message:
 ${formData.message}
     `.trim()
-    
+
     // Encode the email body for URL
     const encodedBody = encodeURIComponent(emailBody)
-    const encodedSubject = encodeURIComponent('Contact Form Submission - InLighnX Global')
-    
+    const encodedSubject = encodeURIComponent('Contact Form Submission - Inlighntech')
+
     // Create mailto link
-    const mailtoLink = `mailto:inlighnxglobal@gmail.com?subject=${encodedSubject}&body=${encodedBody}`
-    
+    const mailtoLink = `mailto:inlighntech@gmail.com?subject=${encodedSubject}&body=${encodedBody}`
+
     // Open the email client
     window.location.href = mailtoLink
-    
+
     // Show success message
     setSubmitted(true)
     setTimeout(() => {
@@ -54,7 +54,7 @@ ${formData.message}
   }
   const roadmapSvg = (
     <div className="roadmap-container" style={{ width: '100%', height: 'auto', maxWidth: '1200px', margin: '0 auto' }}>
-      <img 
+      <img
         src={Roadmap}
         alt="Internship Journey Roadmap"
         style={{ width: '100%', height: 'auto', display: 'block' }}
@@ -86,7 +86,7 @@ ${formData.message}
           '.aboutus-certifications-section, .aboutus-certifications-title, .aboutus-certifications-subtitle, .aboutus-certification-card, .reveal-on-scroll'
         )
         .forEach((el) => io.observe(el))
-    } catch {}
+    } catch { }
     return () => {
       try {
         if (!io) return
@@ -95,7 +95,7 @@ ${formData.message}
             '.aboutus-certifications-section, .aboutus-certifications-title, .aboutus-certifications-subtitle, .aboutus-certification-card, .reveal-on-scroll'
           )
           .forEach((el) => io.unobserve(el))
-      } catch {}
+      } catch { }
     }
   }, [])
 
@@ -136,19 +136,19 @@ ${formData.message}
         })
       }, { threshold: 0.3 })
       document.querySelectorAll('.stat-value').forEach((el) => io.observe(el))
-    } catch {}
+    } catch { }
 
     return () => {
       try {
         if (!io) return
         document.querySelectorAll('.stat-value').forEach((el) => io.unobserve(el))
-      } catch {}
+      } catch { }
     }
   }, [])
 
   return (
     <div className="aboutus-page-container">
-     
+
       <div className="aboutus-page-content">
         <h1>About Us</h1>
         <p className="aboutus-page-subtitle">
@@ -265,13 +265,13 @@ ${formData.message}
         <section className="relative py-8 pb-4 mb-8 overflow-hidden reveal-on-scroll">
           <div className="absolute inset-0 top-0 h-[180px] z-0 overflow-hidden animated-dashed-line-container" aria-hidden="true">
             <svg className="w-full h-full block max-w-full" viewBox="0 0 1200 180" preserveAspectRatio="none">
-              <path 
-                d="M0,120 C200,60 350,160 520,110 C720,50 880,140 1200,80" 
-                fill="none" 
-                stroke="#0F172A" 
-                strokeWidth="4" 
-                strokeLinecap="round" 
-                strokeDasharray="8 10" 
+              <path
+                d="M0,120 C200,60 350,160 520,110 C720,50 880,140 1200,80"
+                fill="none"
+                stroke="#0F172A"
+                strokeWidth="4"
+                strokeLinecap="round"
+                strokeDasharray="8 10"
                 className="opacity-60 animate-dash-move"
               />
             </svg>
@@ -309,12 +309,12 @@ ${formData.message}
           <div className="aboutus-certifications-grid">
             <a
               className="achievement-card slide-from-left aboutus-certification-card"
-              href="https://www.inlighntech.com/wp-content/uploads/2025/04/Screenshot-2025-04-30-164507.png"
+              href="https://img.sanishtech.com/u/79f596cd83c0d05122b64102cae10865.png"
               target="_blank"
               rel="noreferrer noopener"
             >
               <div className="achievement-image">
-                <img src="https://www.inlighntech.com/wp-content/uploads/2025/04/Screenshot-2025-04-30-164507.png" alt="Incorporation Certificate" loading="lazy" />
+                <img src="https://img.sanishtech.com/u/79f596cd83c0d05122b64102cae10865.png" alt="Incorporation Certificate" loading="lazy" />
                 <span className="achievement-badge" aria-hidden>+</span>
               </div>
               <div className="achievement-texts">
@@ -330,7 +330,7 @@ ${formData.message}
               rel="noreferrer noopener"
             >
               <div className="achievement-image">
-                <img src="https://www.inlighntech.com/wp-content/uploads/2025/04/WhatsApp-Image-2025-04-30-at-16.32.01_07ba59ed-780x777.jpg" alt="Startup India Recognitions" loading="lazy" style={{objectFit: 'cover', backgroundColor: '#fff'}} />
+                <img src="https://img.sanishtech.com/u/7f4f00af4f0f3e605733126e2fa80d5e.jpg" alt="Startup India Recognitions" loading="lazy" style={{ objectFit: 'cover', backgroundColor: '#fff' }} />
                 <span className="achievement-badge" aria-hidden>+</span>
               </div>
               <div className="achievement-texts">
@@ -343,12 +343,12 @@ ${formData.message}
 
 
         <section className="contact-form-section reveal-on-scroll" aria-labelledby="contact-title">
-        <div className="lg:sticky lg:top-8 lg:self-start">
+          <div className="lg:sticky lg:top-8 lg:self-start">
             <div className="bg-white rounded-2xl shadow-xl p-5 sm:p-6 md:p-8 lg:p-10 border border-gray-100">
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-5 sm:mb-6 md:mb-8">
                 Get in Touch
               </h2>
-              
+
               {submitted ? (
                 <div className="text-center py-8 sm:py-12">
                   <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full mb-4 sm:mb-6 animate-bounce">
@@ -393,7 +393,7 @@ ${formData.message}
                       />
                     </div>
                   </div>
-                  
+
                   <div>
                     <label htmlFor="domain" className="block text-sm font-semibold text-gray-700 mb-2">
                       Domain of Internship
@@ -409,7 +409,7 @@ ${formData.message}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all duration-200 outline-none text-gray-900 placeholder-gray-400"
                     />
                   </div>
-                  
+
                   <div>
                     <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
                       Message
@@ -425,7 +425,7 @@ ${formData.message}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all duration-200 outline-none resize-y text-gray-900 placeholder-gray-400"
                     ></textarea>
                   </div>
-                  
+
                   <button
                     type="submit"
                     className="w-full bg-gradient-to-r from-[#0F172A] to-[#1e293b] text-white font-semibold py-3 sm:py-3.5 px-6 rounded-lg hover:from-[#1e293b] hover:to-[#0F172A] transition-all duration-300 shadow-md hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2"

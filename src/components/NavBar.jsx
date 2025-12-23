@@ -40,7 +40,7 @@ function NavBar() {
               <img src={logo} alt="InLighn Tech" className="logo-image" />
             </div>
           </Link>
-          <span className="mobile-logo-text">InlighnXglobal</span>
+          <span className="mobile-logo-text">InlighnTech</span>
         </div>
         
         <button 

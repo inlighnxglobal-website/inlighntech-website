@@ -42,20 +42,20 @@ function CourseDetail({ course: courseProp, onClose: onCloseProp }) {
       try {
         setLoading(true);
         setError(null);
-        
+
         // courseSlug already comes from URL path (e.g., "full-stack" from "/programs/full-stack")
         // The backend expects the slug as-is, it will decode and match internally
         const apiUrl = `${API_BASE_URL}/api/programs/by-name/${courseSlug}`;
-        
+
         const response = await fetch(apiUrl);
-        
+
         if (!response.ok) {
           const errorData = await response.json().catch(() => ({}));
           throw new Error(errorData.message || `Course not found (Status: ${response.status})`);
         }
-        
+
         const result = await response.json();
-        
+
         if (result.success && result.data) {
           setCourse(result.data);
         } else {
@@ -76,7 +76,7 @@ function CourseDetail({ course: courseProp, onClose: onCloseProp }) {
   // Image carousel effect - only run when course is loaded
   useEffect(() => {
     if (!course) return;
-    
+
     const courseImagesCount = course.additionalImages && course.additionalImages.length > 0
       ? course.additionalImages.length + 1 // +1 for thumbnail
       : 3; // thumbnail + 2 placeholders
@@ -84,7 +84,7 @@ function CourseDetail({ course: courseProp, onClose: onCloseProp }) {
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % courseImagesCount);
     }, 5000);
-    
+
     return () => clearInterval(interval);
   }, [course]);
 
@@ -124,24 +124,24 @@ function CourseDetail({ course: courseProp, onClose: onCloseProp }) {
     ...(course.additionalImages && course.additionalImages.length > 0
       ? course.additionalImages.map(img => ({ type: 'photo', content: img }))
       : [
-          { type: 'award', content: '/certificate-placeholder.jpg' },
-          { type: 'photo', content: '/course-photo-placeholder.jpg' }
-        ]
+        { type: 'award', content: '/certificate-placeholder.jpg' },
+        { type: 'photo', content: '/course-photo-placeholder.jpg' }
+      ]
     )
   ];
 
   const courseTopics = course.courseTopics && course.courseTopics.length > 0
     ? course.courseTopics
     : [
-        `Introduction to ${course.title.split(' ')[0]}`,
-        'Core Concepts and Fundamentals',
-        'Advanced Techniques and Tools',
-        'Hands-on Projects and Exercises',
-        'Industry Best Practices',
-        'Real-world Case Studies',
-        'Portfolio Development',
-        'Certification and Next Steps'
-      ];
+      `Introduction to ${course.title.split(' ')[0]}`,
+      'Core Concepts and Fundamentals',
+      'Advanced Techniques and Tools',
+      'Hands-on Projects and Exercises',
+      'Industry Best Practices',
+      'Real-world Case Studies',
+      'Portfolio Development',
+      'Certification and Next Steps'
+    ];
 
   const keyFeatures = [
     { image: certificateIcon, text: 'Globally Recognized Certification' },
@@ -153,12 +153,12 @@ function CourseDetail({ course: courseProp, onClose: onCloseProp }) {
     { image: levelIcon, text: `${course.level} level course` },
     { image: skillsIcon, text: `Skills: ${course.skills.join(', ')}` }
   ];
-  
+
   const renderStars = (rating) => {
     const stars = [];
     const fullStars = Math.floor(rating || 0);
     const hasHalfStar = (rating || 0) % 1 >= 0.5;
-    
+
     for (let i = 1; i <= 5; i++) {
       if (i <= fullStars) {
         stars.push(<span key={i} className="star filled">★</span>);
@@ -168,7 +168,7 @@ function CourseDetail({ course: courseProp, onClose: onCloseProp }) {
         stars.push(<span key={i} className="star">★</span>);
       }
     }
-    
+
     return (
       <div className="rating-stars">
         {stars}
@@ -206,33 +206,14 @@ function CourseDetail({ course: courseProp, onClose: onCloseProp }) {
               <span>/</span>
               <span>{course.title}</span>
             </div>
-            
+
             <div className="course-header-main">
               <div className="course-header-left">
                 <h1 className="course-detail-title">{course.title}</h1>
                 <p className="course-tagline">Accelerate your Career</p>
                 <p className="course-description">{course.summary}</p>
-                
-                <div className="course-pricing">
-                  <span>Apply this Course @</span>
-                  <span className="original-price">₹{originalPrice}</span>
-                  <span className="discounted-price">₹{discountedPrice}</span>
-                  <button 
-                    onClick={() => window.open('https://www.youtube.com/watch?v=w07el7UywbQ', '_blank', 'noopener,noreferrer')}
-                    style={{
-                      background: '#FFD700',
-                      color: '#064B45',
-                      border: 'none',
-                      padding: '0.75rem 2rem',
-                      borderRadius: '8px',
-                      fontSize: '1.1rem',
-                      fontWeight: '700',
-                      cursor: 'pointer',
-                      transition: 'all 0.3s ease',
-                      fontFamily: 'inherit'
-                    }}
-                  >Apply Now</button>
-                </div>
+
+
 
                 <div className="course-highlights">
                   <div className="highlight-item">
@@ -265,41 +246,51 @@ function CourseDetail({ course: courseProp, onClose: onCloseProp }) {
                   <h3 className="enrollment-card-title">{course.title}</h3>
                   <h4 className="enrollment-card-subtitle">Internship Program</h4>
                 </div>
-                
-                <div className="enrollment-card-info">
-                  <div className="info-card">
-                    <div className="info-card-header">
-                      <svg className="info-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                        <line x1="16" y1="2" x2="16" y2="6"></line>
-                        <line x1="8" y1="2" x2="8" y2="6"></line>
-                        <line x1="3" y1="10" x2="21" y2="10"></line>
-                      </svg>
-                      <span className="info-card-label">Batch Starts</span>
-                    </div>
-                    <div className="info-card-value">TBA</div>
-                    <div className="info-card-subtitle">To Be Announced</div>
-                  </div>
 
-                  <div className="info-card price-card">
-                    <div className="info-card-header">
-                      <h1 className="text-2xl font-bold text-white">₹</h1>
-                      <span className="info-card-label">Application Price (INR)</span>
+                <div className="enrollment-card-info">
+                  <div className="motivational-section">
+                    <div className="enrollment-benefits">
+                      <div className="benefit-item">
+                        <svg className="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                          <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <span>Industry-Ready Skills</span>
+                      </div>
+                      <div className="benefit-item">
+                        <svg className="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                          <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <span>Hands-On Projects</span>
+                      </div>
+                      <div className="benefit-item">
+                        <svg className="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                          <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <span>Expert Mentorship</span>
+                      </div>
+                      <div className="benefit-item">
+                        <svg className="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                          <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <span>Lifetime Access</span>
+                      </div>
                     </div>
-                    <div className="price-display">
-                      <span className="price-main">₹{discountedPrice}</span>
-                      <span className="price-strike">₹{originalPrice}</span>
-                    </div>
-                    <div className="price-note">
-                      <span className="price-note-text">Registration fee: ₹99 only</span>
+
+                    <div className="enrollment-cta">
+                      <p className="cta-text">🚀 Start Your Journey Today!</p>
+                      <p className="cta-subtext">Join thousands of successful learners</p>
                     </div>
                   </div>
                 </div>
 
                 <div className="enrollment-card-divider"></div>
 
-                <button 
-                  className="apply-now-btn" 
+                <button
+                  className="apply-now-btn"
                   onClick={() => window.open('https://www.youtube.com/watch?v=w07el7UywbQ', '_blank', 'noopener,noreferrer')}
                 >
                   <span>Apply Now</span>
@@ -352,40 +343,40 @@ function CourseDetail({ course: courseProp, onClose: onCloseProp }) {
             </div>
 
             {/* Technologies You Will Learn */}
-<div className="course-section">
-  <h3 className="course-section-subtitle" style={{ textAlign: "center", marginBottom: "2rem",justifySelf: 'left' }}>
-    Technologies You Will Learn
-  </h3>
+            <div className="course-section">
+              <h3 className="course-section-subtitle" style={{ textAlign: "center", marginBottom: "2rem", justifySelf: 'left' }}>
+                Technologies You Will Learn
+              </h3>
 
-  <div className="tech-logos">
-    {course.technologies && course.technologies.length > 0 ? (
-      course.technologies.map((tech, index) => (
-        <div key={index} className="tech-logo">{tech}</div>
-      ))
-    ) : (
-      <>
-        <div className="tech-logo">Git logo</div>
-        <div className="tech-logo">GitHub logo</div>
-        <div className="tech-logo">React logo</div>
-        <div className="tech-logo">Node.js logo</div>
-        <div className="tech-logo">MongoDB logo</div>
-      </>
-    )}
-  </div>
-</div>
-<h3 
-      className="course-section-subtitle"
-      style={{textAlign: 'center', marginBottom: '1rem',justifySelf: 'left'}}
-    >
-      sample certificate
-    </h3>
+              <div className="tech-logos">
+                {course.technologies && course.technologies.length > 0 ? (
+                  course.technologies.map((tech, index) => (
+                    <div key={index} className="tech-logo">{tech}</div>
+                  ))
+                ) : (
+                  <>
+                    <div className="tech-logo">Git logo</div>
+                    <div className="tech-logo">GitHub logo</div>
+                    <div className="tech-logo">React logo</div>
+                    <div className="tech-logo">Node.js logo</div>
+                    <div className="tech-logo">MongoDB logo</div>
+                  </>
+                )}
+              </div>
+            </div>
+            <h3
+              className="course-section-subtitle"
+              style={{ textAlign: 'center', marginBottom: '1rem', justifySelf: 'left' }}
+            >
+              sample certificate
+            </h3>
 
             {/* Certificate Section */}
             <div className="certificate-section">
               <div className="certificate-container">
                 <div className="certificate-image-wrapper">
-                  <img 
-                    src={course.certificateImage || "/certificate-placeholder.jpg"} 
+                  <img
+                    src={course.certificateImage || "/certificate-placeholder.jpg"}
                     alt="Certificate"
                     className="certificate-image"
                   />

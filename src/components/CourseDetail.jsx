@@ -310,7 +310,7 @@ function CourseDetail({ course: courseProp, onClose: onCloseProp }) {
             {/* Course Overview */}
             <div className="course-section">
               <h2 className="course-section-title">{course.title}</h2>
-              <h3 className="course-section-subtitle">Course Overview</h3>
+              <h3 className="course-section-subtitle">Program Overview</h3>
               {course.detailedSummary && course.detailedSummary.trim() ? (
                 <div className="course-overview-text">
                   {course.detailedSummary.split('\n\n').filter(p => p.trim()).map((paragraph, index) => (

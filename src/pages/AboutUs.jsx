@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react'
 import FloatingWhatsApp from '../components/FloatingWhatsApp'
 import './aboutus.css'
 import Roadmap from '../assets/Roadmap.jpg';
-
+import McaCert from '../assets/moca.jpg';
+import startup from '../assets/skillup.jpg'
+import iso from '../assets/quality.png'
 function AboutUs() {
   const [formData, setFormData] = useState({
     name: '',
@@ -309,12 +311,12 @@ ${formData.message}
           <div className="aboutus-certifications-grid">
             <a
               className="achievement-card slide-from-left aboutus-certification-card"
-              href="https://img.sanishtech.com/u/79f596cd83c0d05122b64102cae10865.png"
+              href={McaCert}
               target="_blank"
               rel="noreferrer noopener"
             >
               <div className="achievement-image">
-                <img src="https://img.sanishtech.com/u/79f596cd83c0d05122b64102cae10865.png" alt="Incorporation Certificate" loading="lazy" />
+                <img src={McaCert} alt="Incorporation Certificate" loading="lazy" />
                 <span className="achievement-badge" aria-hidden>+</span>
               </div>
               <div className="achievement-texts">
@@ -325,17 +327,32 @@ ${formData.message}
 
             <a
               className="achievement-card slide-from-right aboutus-certification-card"
-              href="https://www.startupindia.gov.in/content/sih/en/block-chain-recognized-certificate.html?DIPP=DIPP201797"
+              href={startup}
               target="_blank"
               rel="noreferrer noopener"
             >
               <div className="achievement-image">
-                <img src="https://img.sanishtech.com/u/7f4f00af4f0f3e605733126e2fa80d5e.jpg" alt="Startup India Recognitions" loading="lazy" style={{ objectFit: 'cover', backgroundColor: '#fff' }} />
+                <img src={startup} alt="Startup India Recognitions" loading="lazy" style={{ objectFit: 'cover', backgroundColor: '#fff' }} />
                 <span className="achievement-badge" aria-hidden>+</span>
               </div>
               <div className="achievement-texts">
                 <p className="achievement-title">Startup India Recognitions</p>
                 <p className="achievement-subtitle">Department for Promotion of Industry and Internal Trade Approved</p>
+              </div>
+            </a>
+            <a
+              className="achievement-card slide-from-left aboutus-certification-card"
+              href={iso}
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <div className="achievement-image">
+                <img src={iso} alt="Incorporation Certificate" loading="lazy" />
+                <span className="achievement-badge" aria-hidden>+</span>
+              </div>
+              <div className="achievement-texts">
+                <p className="achievement-title">Iso Certified Recoginzation</p>
+                <p className="achievement-subtitle"></p>
               </div>
             </a>
           </div>

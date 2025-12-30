@@ -291,7 +291,7 @@ function CourseDetail({ course: courseProp, onClose: onCloseProp }) {
 
                 <button
                   className="apply-now-btn"
-                  onClick={() => window.open('https://www.youtube.com/watch?v=w07el7UywbQ', '_blank', 'noopener,noreferrer')}
+                  onClick={() => navigate('/register')}
                 >
                   <span>Apply Now</span>
                   <svg className="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">

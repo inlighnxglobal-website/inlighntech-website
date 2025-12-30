@@ -57,7 +57,7 @@ const Register = () => {
     };
 
     return (
-        <div className="min-h-screen bg-[#f0f4f8] py-10 px-5 flex justify-center items-start font-sans">
+        <div className="min-h-screen bg-[#f0f4f8] py-10 px-5 flex justify-center items-start font-sans mt-20">
             <div className="bg-white rounded-lg shadow-sm w-full max-w-2xl overflow-hidden">
                 <div className="bg-[#1a3c6e] p-6 text-center">
                     <h1 className="text-white text-2xl sm:text-3xl font-bold mb-2">Join Our Internship Program!</h1>
@@ -100,28 +100,6 @@ const Register = () => {
                             />
                         </div>
 
-                        {formData.userType === 'Student' && (
-                            <div className="flex flex-col sm:flex-row items-start gap-2 sm:gap-5 pt-2">
-                                <label className="w-full sm:w-[120px] text-left sm:text-right font-semibold text-gray-800 text-sm shrink-0 pt-0">
-                                    Graduation Year:
-                                </label>
-                                <div className="flex flex-col gap-2.5">
-                                    {['1', '2', '3', '4'].map((year) => (
-                                        <label key={year} className="flex items-center gap-2.5 cursor-pointer">
-                                            <input
-                                                type="radio"
-                                                name="graduationYear"
-                                                value={year}
-                                                checked={formData.graduationYear === year}
-                                                onChange={handleChange}
-                                                className="w-5 h-5 cursor-pointer accent-[#1a3c6e]"
-                                            />
-                                            <span className="text-[15px] text-gray-800 font-medium">{year}</span>
-                                        </label>
-                                    ))}
-                                </div>
-                            </div>
-                        )}
                         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-5">
                             <label htmlFor="phone" className="w-full sm:w-[120px] text-left sm:text-right font-semibold text-gray-800 text-sm shrink-0">
                                 Phone Number:
@@ -133,22 +111,6 @@ const Register = () => {
                                 value={formData.phone}
                                 onChange={handleChange}
                                 placeholder="Enter your phone number"
-                                required
-                                className="w-full px-3 py-2.5 border border-gray-300 rounded text-sm outline-none bg-[#fcfcfc] focus:border-[#80bdff] focus:ring-[0.2rem] focus:ring-[rgba(0,123,255,0.25)]"
-                            />
-                        </div>
-
-                        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-5">
-                            <label htmlFor="collegeName" className="w-full sm:w-[120px] text-left sm:text-right font-semibold text-gray-800 text-sm shrink-0">
-                                College/University Name:
-                            </label>
-                            <input
-                                type="text"
-                                id="collegeName"
-                                name="collegeName"
-                                value={formData.collegeName}
-                                onChange={handleChange}
-                                placeholder="Enter your college or university name"
                                 required
                                 className="w-full px-3 py-2.5 border border-gray-300 rounded text-sm outline-none bg-[#fcfcfc] focus:border-[#80bdff] focus:ring-[0.2rem] focus:ring-[rgba(0,123,255,0.25)]"
                             />
@@ -198,6 +160,45 @@ const Register = () => {
                                     </label>
                                 ))}
                             </div>
+                        </div>
+
+                        {formData.userType === 'Student' && (
+                            <div className="flex flex-col sm:flex-row items-start gap-2 sm:gap-5 pt-2">
+                                <label className="w-full sm:w-[120px] text-left sm:text-right font-semibold text-gray-800 text-sm shrink-0 pt-0">
+                                    Graduation Year:
+                                </label>
+                                <div className="flex flex-col gap-2.5">
+                                    {['1', '2', '3', '4'].map((year) => (
+                                        <label key={year} className="flex items-center gap-2.5 cursor-pointer">
+                                            <input
+                                                type="radio"
+                                                name="graduationYear"
+                                                value={year}
+                                                checked={formData.graduationYear === year}
+                                                onChange={handleChange}
+                                                className="w-5 h-5 cursor-pointer accent-[#1a3c6e]"
+                                            />
+                                            <span className="text-[15px] text-gray-800 font-medium">{year}</span>
+                                        </label>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+
+                        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-5">
+                            <label htmlFor="collegeName" className="w-full sm:w-[120px] text-left sm:text-right font-semibold text-gray-800 text-sm shrink-0">
+                                College/University Name:
+                            </label>
+                            <input
+                                type="text"
+                                id="collegeName"
+                                name="collegeName"
+                                value={formData.collegeName}
+                                onChange={handleChange}
+                                placeholder="Enter your college or university name"
+                                required
+                                className="w-full px-3 py-2.5 border border-gray-300 rounded text-sm outline-none bg-[#fcfcfc] focus:border-[#80bdff] focus:ring-[0.2rem] focus:ring-[rgba(0,123,255,0.25)]"
+                            />
                         </div>
 
                         <div className="flex flex-col sm:flex-row items-start gap-2 sm:gap-5 pt-2">

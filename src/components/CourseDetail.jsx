@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './CourseDetail.css';
 import certificateIcon from '../assets/certificate-icon.webp';
+import sampleCertif from '../assets/sample-certif.png';
 import cloudIcon from '../assets/cloud-icon.png';
 import forumIcon from '../assets/support-icon.png';
 import projectsIcon from '../assets/project-icon.png';
@@ -376,19 +377,10 @@ function CourseDetail({ course: courseProp, onClose: onCloseProp }) {
               <div className="certificate-container">
                 <div className="certificate-image-wrapper">
                   <img
-                    src={course.certificateImage || "/certificate-placeholder.jpg"}
-                    alt="Certificate"
+                    src={sampleCertif}
+                    alt="Sample Certificate"
                     className="certificate-image"
                   />
-                  <div className="certificate-overlay">
-                    <div className="certificate-badge">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                        <path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                      </svg>
-                      <span>Verified Certificate</span>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>

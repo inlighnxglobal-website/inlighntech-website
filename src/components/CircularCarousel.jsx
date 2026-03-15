@@ -4,7 +4,11 @@ import "./CircularCarousel.css";
 import Ayesha from '../assets/ayesha.png';
 import Krishnendu from '../assets/krish.png';
 import Aditya from '../assets/aditya.png';
-
+import Jayant from '../assets/jayant.jpg';
+import Priyanshi from '../assets/priyanshi.jpg';
+import Vennam from '../assets/vennam.jpg';
+import Vulli from '../assets/vulli.jpg';
+import Rishav from '../assets/rishav.jpg';
 const carouselData = [
   {
     quote:
@@ -14,6 +18,39 @@ const carouselData = [
     src: Ayesha,
     linkedin: "https://www.linkedin.com/in/ayeshatase",
   },
+  {
+  quote:
+    "The internship experience helped me strengthen my analytical thinking and practical data skills. Working on real datasets and solving business problems gave me the confidence to pursue a career in data analytics.",
+  name: "Priyanshi Sharma",
+  designation: "Data Analyst Intern | KPMG",
+  src: Priyanshi,
+  linkedin: "https://www.linkedin.com/in/priyanshisharmaofficial/",
+},
+{
+  quote:
+    "The internship journey helped me understand real-world software development practices. It enhanced my coding skills, problem-solving ability, and prepared me for a professional role as a software engineer.",
+  name: "Vulli Pavan",
+  designation: "Senior Software Engineer | Axiora Global Solution",
+  src: Vulli,
+  linkedin: "https://www.linkedin.com/in/vullipavan/",
+},
+{
+  quote:
+    "The internship experience helped me gain valuable exposure to business operations and team collaboration. It strengthened my organizational skills and prepared me for my role in operations management.",
+  name: "Jayant Kumar",
+  designation: "Operations Executive | Stirring Minds",
+  src: Jayant,
+  linkedin: "https://www.linkedin.com/in/jayant-kumar46/",
+},
+{
+  quote:
+    "Working as a data science intern allowed me to apply machine learning and data analysis concepts to real-world problems. The experience greatly improved my technical knowledge and industry exposure.",
+  name: "Rishav Deb",
+  designation: "Data Science & Analyst Intern | Amdox Technologies",
+  src: Rishav,
+  linkedin: "https://www.linkedin.com/in/rishav-deb-aa973a1a9/",
+},
+
   {
     quote:
     "This internship provided me with hands-on forensic investigation skills and deep insights into cyber analysis. It played a crucial role in shaping my career as a Cyber Forensic Consultant.",
@@ -31,6 +68,7 @@ const carouselData = [
     linkedin: "https://www.linkedin.com/in/aditya-kumar-6604a8249", 
   },
 ];
+
 
 export default function CircularCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);

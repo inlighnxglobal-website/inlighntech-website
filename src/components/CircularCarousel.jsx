@@ -67,6 +67,22 @@ const carouselData = [
     src: Aditya,
     linkedin: "https://www.linkedin.com/in/aditya-kumar-6604a8249", 
   },
+  {
+     quote:
+      "The internship experience enhanced my analytical thinking and business problem-solving skills. It provided real-world exposure that helped me grow into my role as a Business Analyst at Practo.",
+    name: "Abhishek Banaj",
+    designation: "Business Analyst | Practo",
+    src:"https://media.licdn.com/dms/image/v2/D5603AQE27DmzCfnD-Q/profile-displayphoto-crop_800_800/B56Z21_QhFHkAI-/0/1776874754848?e=1778716800&v=beta&t=d_lOtI-mitwAWg-OqTzEedDHUtjVV-eEFxZzXChNG4M",
+    linkedin: "https://www.linkedin.com/in/abhishekbanaj/", 
+  },
+  {
+  quote:
+    "This internship strengthened my understanding of AI security and risk assessment, giving me practical exposure to real-world challenges and preparing me for my role as an AI Security & Risk Trainee at Dutient.",
+  name: "Vatsla Sharma",
+  designation: "AI Security & Risk Trainee | Dutient",
+  src: "https://media.licdn.com/dms/image/v2/D4E35AQEsSXiaPHknvw/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1733923898173?e=1777777200&v=beta&t=x8Mp13watyk7Ao8eFfpcisUbtvhgOzGaUA4PXXfkiBs",
+  linkedin: "https://www.linkedin.com/in/vatsla-sharma-/",
+},
 ];
 
 

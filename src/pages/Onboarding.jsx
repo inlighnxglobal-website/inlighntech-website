@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaLock } from 'react-icons/fa';
+import { FaLock, FaWhatsapp, FaCheckCircle } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 
 const Onboarding = () => {
@@ -13,6 +13,7 @@ const Onboarding = () => {
     role: '',
     verified: false
   });
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -58,8 +59,7 @@ const Onboarding = () => {
 
       const data = await response.json();
       if (data.success) {
-        alert('Application submitted successfully!');
-        navigate('/programs');
+        setIsSubmitted(true);
       } else {
         alert('Failed to submit application: ' + data.message);
       }
@@ -106,146 +106,183 @@ const Onboarding = () => {
 
         {/* Body */}
         <div className="px-8 py-8">
-          <div className="mb-8">
-            <h3 className="text-xl font-bold text-[#333]">Contact Information</h3>
-            <p className="text-gray-500 text-[14px] mt-1.5">Please fill out the details as per your academic records.</p>
-            <div className="h-1 w-16 bg-[#1e3a8a] mt-3 rounded-full"></div>
-          </div>
-
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
-              <div className="space-y-2">
-                <label className="block text-[13px] font-bold text-[#333] uppercase tracking-wide">
-                  Name <span className="text-red-500">*</span>
-                </label>
-                <input 
-                  type="text" 
-                  name="name"
-                  required
-                  placeholder="Name" 
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 bg-[#f8f9fa] border border-[#e5e7eb] rounded-lg focus:outline-none focus:ring-1 focus:ring-[#1e3a8a] focus:border-[#1e3a8a] transition-colors text-[15px] placeholder-gray-400"
-                />
-              </div>
-              <div className="space-y-2">
-                <label className="block text-[13px] font-bold text-[#333] uppercase tracking-wide">
-                  Email <span className="text-red-500">*</span>
-                </label>
-                <input 
-                  type="email" 
-                  name="email"
-                  required
-                  placeholder="Email" 
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 bg-[#f8f9fa] border border-[#e5e7eb] rounded-lg focus:outline-none focus:ring-1 focus:ring-[#1e3a8a] focus:border-[#1e3a8a] transition-colors text-[15px] placeholder-gray-400"
-                />
-              </div>
-              
-              <div className="space-y-2">
-                <label className="block text-[13px] font-bold text-[#333] uppercase tracking-wide">
-                  Phone Number <span className="text-red-500">*</span>
-                </label>
-                <input 
-                  type="tel" 
-                  name="phone"
-                  required
-                  pattern="\d*"
-                  title="Please enter only numbers"
-                  placeholder="Phone number" 
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 bg-[#f8f9fa] border border-[#e5e7eb] rounded-lg focus:outline-none focus:ring-1 focus:ring-[#1e3a8a] focus:border-[#1e3a8a] transition-colors text-[15px] placeholder-gray-400"
-                />
+          {!isSubmitted ? (
+            <>
+              <div className="mb-8">
+                <h3 className="text-xl font-bold text-[#333]">Contact Information</h3>
+                <p className="text-gray-500 text-[14px] mt-1.5">Please fill out the details as per your academic records.</p>
+                <div className="h-1 w-16 bg-[#1e3a8a] mt-3 rounded-full"></div>
               </div>
 
-              <div className="space-y-2">
-                <label className="block text-[13px] font-bold text-[#333] uppercase tracking-wide">
-                  Internship Domain <span className="text-red-500">*</span>
-                </label>
-                <input 
-                  type="text" 
-                  name="domain"
-                  required
-                  placeholder="e.g. Web Development" 
-                  value={formData.domain}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 bg-[#f8f9fa] border border-[#e5e7eb] rounded-lg focus:outline-none focus:ring-1 focus:ring-[#1e3a8a] focus:border-[#1e3a8a] transition-colors text-[15px] placeholder-gray-400"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <label className="block text-[13px] font-bold text-[#333] uppercase tracking-wide">
-                  State <span className="text-red-500">*</span>
-                </label>
-                <input 
-                  type="text" 
-                  name="state"
-                  required
-                  placeholder="Your State" 
-                  value={formData.state}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 bg-[#f8f9fa] border border-[#e5e7eb] rounded-lg focus:outline-none focus:ring-1 focus:ring-[#1e3a8a] focus:border-[#1e3a8a] transition-colors text-[15px] placeholder-gray-400"
-                />
-              </div>
-            </div>
-
-            <div className="space-y-3 pt-2">
-              <label className="block text-[13px] font-bold text-[#333] uppercase tracking-wide">
-                You are <span className="text-red-500">*</span>
-              </label>
-              <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 mt-2">
-                {['Student', 'Fresher', 'Working Professional'].map((roleOption) => (
-                  <label key={roleOption} className="flex items-center gap-2 cursor-pointer group">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                  <div className="space-y-2">
+                    <label className="block text-[13px] font-bold text-[#333] uppercase tracking-wide">
+                      Name <span className="text-red-500">*</span>
+                    </label>
                     <input 
-                      type="radio" 
-                      name="role"
-                      value={roleOption}
+                      type="text" 
+                      name="name"
                       required
-                      checked={formData.role === roleOption}
+                      placeholder="Name" 
+                      value={formData.name}
                       onChange={handleChange}
-                      className="w-[18px] h-[18px] text-[#1e3a8a] border-gray-300 focus:ring-[#1e3a8a] cursor-pointer"
+                      className="w-full px-4 py-3 bg-[#f8f9fa] border border-[#e5e7eb] rounded-lg focus:outline-none focus:ring-1 focus:ring-[#1e3a8a] focus:border-[#1e3a8a] transition-colors text-[15px] placeholder-gray-400"
                     />
-                    <span className="text-gray-700 text-[14.5px] group-hover:text-[#1e3a8a] transition-colors">{roleOption}</span>
-                  </label>
-                ))}
-              </div>
-            </div>
+                  </div>
+                  <div className="space-y-2">
+                    <label className="block text-[13px] font-bold text-[#333] uppercase tracking-wide">
+                      Email <span className="text-red-500">*</span>
+                    </label>
+                    <input 
+                      type="email" 
+                      name="email"
+                      required
+                      placeholder="Email" 
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 bg-[#f8f9fa] border border-[#e5e7eb] rounded-lg focus:outline-none focus:ring-1 focus:ring-[#1e3a8a] focus:border-[#1e3a8a] transition-colors text-[15px] placeholder-gray-400"
+                    />
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <label className="block text-[13px] font-bold text-[#333] uppercase tracking-wide">
+                      Phone Number <span className="text-red-500">*</span>
+                    </label>
+                    <input 
+                      type="tel" 
+                      name="phone"
+                      required
+                      pattern="\d*"
+                      title="Please enter only numbers"
+                      placeholder="Phone number" 
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 bg-[#f8f9fa] border border-[#e5e7eb] rounded-lg focus:outline-none focus:ring-1 focus:ring-[#1e3a8a] focus:border-[#1e3a8a] transition-colors text-[15px] placeholder-gray-400"
+                    />
+                  </div>
 
-            <div className="pt-4 pb-2">
-              <label className="flex items-start gap-3 cursor-pointer group">
-                <div className="relative flex items-start pt-1">
-                  <input 
-                    type="checkbox" 
-                    name="verified"
-                    required
-                    checked={formData.verified}
-                    onChange={handleChange}
-                    className="w-[18px] h-[18px] rounded-[4px] border-gray-300 text-[#1e3a8a] focus:ring-[#1e3a8a] cursor-pointer mt-0.5"
-                  />
+                  <div className="space-y-2">
+                    <label className="block text-[13px] font-bold text-[#333] uppercase tracking-wide">
+                      Internship Domain <span className="text-red-500">*</span>
+                    </label>
+                    <input 
+                      type="text" 
+                      name="domain"
+                      required
+                      placeholder="e.g. Web Development" 
+                      value={formData.domain}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 bg-[#f8f9fa] border border-[#e5e7eb] rounded-lg focus:outline-none focus:ring-1 focus:ring-[#1e3a8a] focus:border-[#1e3a8a] transition-colors text-[15px] placeholder-gray-400"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="block text-[13px] font-bold text-[#333] uppercase tracking-wide">
+                      State <span className="text-red-500">*</span>
+                    </label>
+                    <input 
+                      type="text" 
+                      name="state"
+                      required
+                      placeholder="Your State" 
+                      value={formData.state}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 bg-[#f8f9fa] border border-[#e5e7eb] rounded-lg focus:outline-none focus:ring-1 focus:ring-[#1e3a8a] focus:border-[#1e3a8a] transition-colors text-[15px] placeholder-gray-400"
+                    />
+                  </div>
                 </div>
-                <span className="text-gray-600 text-[14.5px] leading-[1.6]">
-                  <span className="text-red-500 font-bold mr-1">*</span> 
-                  I verify that the information provided is accurate and I agree to receive official communications from <span className="font-semibold italic text-[#333]">UM Base Project</span> regarding my application.
-                </span>
-              </label>
-            </div>
 
-            <div className="border-t border-gray-100 pt-8 mt-4 flex flex-col md:flex-row md:items-center justify-between gap-4">
-              <button 
-                type="submit" 
-                className="bg-[#1e3a8a] hover:bg-[#172554] text-white text-[15px] font-bold py-3.5 px-8 rounded-lg shadow-md shadow-[#1e3a8a]/20 transition-colors w-full md:w-auto text-center"
-              >
-                Submit Application
-              </button>
-              
-              <div className="flex items-center justify-center md:justify-end text-gray-400 text-[13px] gap-2 font-medium">
-                <FaLock className="text-gray-400 mb-0.5" />
-                <span>Secure SSL Encrypted Form</span>
+                <div className="space-y-3 pt-2">
+                  <label className="block text-[13px] font-bold text-[#333] uppercase tracking-wide">
+                    You are <span className="text-red-500">*</span>
+                  </label>
+                  <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 mt-2">
+                    {['Student', 'Fresher', 'Working Professional'].map((roleOption) => (
+                      <label key={roleOption} className="flex items-center gap-2 cursor-pointer group">
+                        <input 
+                          type="radio" 
+                          name="role"
+                          value={roleOption}
+                          required
+                          checked={formData.role === roleOption}
+                          onChange={handleChange}
+                          className="w-[18px] h-[18px] text-[#1e3a8a] border-gray-300 focus:ring-[#1e3a8a] cursor-pointer"
+                        />
+                        <span className="text-gray-700 text-[14.5px] group-hover:text-[#1e3a8a] transition-colors">{roleOption}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="pt-4 pb-2">
+                  <label className="flex items-start gap-3 cursor-pointer group">
+                    <div className="relative flex items-start pt-1">
+                      <input 
+                        type="checkbox" 
+                        name="verified"
+                        required
+                        checked={formData.verified}
+                        onChange={handleChange}
+                        className="w-[18px] h-[18px] rounded-[4px] border-gray-300 text-[#1e3a8a] focus:ring-[#1e3a8a] cursor-pointer mt-0.5"
+                      />
+                    </div>
+                    <span className="text-gray-600 text-[14.5px] leading-[1.6]">
+                      <span className="text-red-500 font-bold mr-1">*</span> 
+                      I verify that the information provided is accurate and I agree to receive official communications from <span className="font-semibold italic text-[#333]">UM Base Project</span> regarding my application.
+                    </span>
+                  </label>
+                </div>
+
+                <div className="border-t border-gray-100 pt-8 mt-4 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                  <button 
+                    type="submit" 
+                    className="bg-[#1e3a8a] hover:bg-[#172554] text-white text-[15px] font-bold py-3.5 px-8 rounded-lg shadow-md shadow-[#1e3a8a]/20 transition-colors w-full md:w-auto text-center"
+                  >
+                    Submit Application
+                  </button>
+                  
+                  <div className="flex items-center justify-center md:justify-end text-gray-400 text-[13px] gap-2 font-medium">
+                    <FaLock className="text-gray-400 mb-0.5" />
+                    <span>Secure SSL Encrypted Form</span>
+                  </div>
+                </div>
+              </form>
+            </>
+          ) : (
+            <div className="py-16 flex flex-col items-center text-center px-4">
+              <div className="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mb-8 animate-bounce">
+                <FaCheckCircle className="text-5xl text-green-500" />
               </div>
+              <h3 className="text-[28px] font-bold text-[#1e3a8a] mb-4">Application Submitted!</h3>
+              <p className="text-gray-600 text-lg mb-10 max-w-[500px] leading-relaxed">
+                Thank you for applying. To receive further updates and connect with other participants, please join our official WhatsApp group.
+              </p>
+              
+              <div className="w-full max-w-[400px] space-y-4">
+                <a 
+                  href="https://chat.whatsapp.com/FOQ0mur19NsKHjR5907WMb" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="bg-[#25D366] hover:bg-[#128C7E] !text-white text-[17px] font-bold py-4 px-8 rounded-xl flex items-center justify-center gap-3 transition-all transform hover:scale-[1.02] shadow-xl shadow-[#25D366]/20 group"
+                >
+                  <FaWhatsapp className="text-2xl group-hover:rotate-12 transition-transform" />
+                  Join WhatsApp Community
+                </a>
+                
+                <button 
+                  onClick={() => navigate('/programs')}
+                  className="w-full text-white font-semibold py-3 px-8 rounded-xl border border-gray-200 hover:bg-gray-50 transition-colors text-[15px]"
+                >
+                  Back to Programs
+                </button>
+              </div>
+              
+              <p className="mt-8 text-gray-400 text-sm italic">
+                A confirmation email will also be sent to you shortly.
+              </p>
             </div>
-          </form>
+          )}
         </div>
       </div>
     </div>

@@ -109,7 +109,7 @@ const Onboarding = () => {
             </div>
             <div>
               <h2 className="text-[22px] font-bold tracking-tight">Internship Onboarding</h2>
-              <p className="text-white/90 text-[13px] font-medium mt-0.5">UM Live Project Internship Selection • Career Portal</p>
+              <p className="text-white/90 text-[13px] font-medium mt-0.5">Live Project Internship Selection • Career Portal</p>
             </div>
           </div>
           
@@ -245,7 +245,7 @@ const Onboarding = () => {
                     </div>
                     <span className="text-gray-600 text-[14.5px] leading-[1.6]">
                       <span className="text-red-500 font-bold mr-1">*</span> 
-                      I verify that the information provided is accurate and I agree to receive official communications from <span className="font-semibold italic text-[#333]">UM Base Project</span> regarding my application.
+                      I verify that the information provided is accurate and I agree to receive official communications from <span className="font-semibold italic text-[#333]">IG Base Project</span> regarding my application.
                     </span>
                   </label>
                 </div>

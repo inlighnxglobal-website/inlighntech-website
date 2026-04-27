@@ -16,6 +16,17 @@ const Onboarding = () => {
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
+    
+    // Filter phone to only allow digits
+    if (name === 'phone') {
+      const numericValue = value.replace(/\D/g, '');
+      setFormData(prev => ({
+        ...prev,
+        [name]: numericValue
+      }));
+      return;
+    }
+
     setFormData(prev => ({
       ...prev,
       [name]: type === 'checkbox' ? checked : value
@@ -24,6 +35,18 @@ const Onboarding = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Basic validation
+    if (!formData.email.includes('@')) {
+      alert('Please enter a valid email address');
+      return;
+    }
+
+    if (formData.phone.length < 10) {
+      alert('Please enter a valid 10-digit phone number');
+      return;
+    }
+
     try {
       const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/onboarding`, {
         method: 'POST',
@@ -128,6 +151,8 @@ const Onboarding = () => {
                   type="tel" 
                   name="phone"
                   required
+                  pattern="\d*"
+                  title="Please enter only numbers"
                   placeholder="Phone number" 
                   value={formData.phone}
                   onChange={handleChange}

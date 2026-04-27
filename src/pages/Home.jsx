@@ -402,7 +402,7 @@ function Home() {
             <p className="home-description">
               Gain real-world experience with our immersive internship programs in Cyber Security, Full Stack Development, Data Science, Data Analyst and in various tech domains. Learn today, lead tomorrow.
             </p>
-            <button className="home-cta-button" onClick={() => navigate('/programs')}>Explore Internships</button>
+            <button className="home-cta-button" onClick={() => navigate('/onboarding')}>Explore Internships</button>
           </div>
           <div className="home-tilted-card-wrapper">
             <TiltedCard

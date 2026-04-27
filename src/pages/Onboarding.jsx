@@ -14,6 +14,22 @@ const Onboarding = () => {
     verified: false
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [whatsappLink, setWhatsappLink] = useState('https://chat.whatsapp.com/FOQ0mur19NsKHjR5907WMb');
+
+  React.useEffect(() => {
+    const fetchLink = async () => {
+      try {
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/onboarding/whatsapp-link`);
+        const data = await response.json();
+        if (data.success) {
+          setWhatsappLink(data.link);
+        }
+      } catch (error) {
+        console.error('Error fetching WhatsApp link:', error);
+      }
+    };
+    fetchLink();
+  }, []);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -261,7 +277,7 @@ const Onboarding = () => {
               
               <div className="w-full max-w-[400px] space-y-4">
                 <a 
-                  href="https://chat.whatsapp.com/FOQ0mur19NsKHjR5907WMb" 
+                  href={whatsappLink} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="bg-[#25D366] hover:bg-[#128C7E] !text-white text-[17px] font-bold py-4 px-8 rounded-xl flex items-center justify-center gap-3 transition-all transform hover:scale-[1.02] shadow-xl shadow-[#25D366]/20 group"
@@ -270,12 +286,14 @@ const Onboarding = () => {
                   Join WhatsApp Community
                 </a>
                 
-                <button 
-                  onClick={() => navigate('/programs')}
-                  className="w-full text-white font-semibold py-3 px-8 rounded-xl border border-gray-200 hover:bg-gray-50 transition-colors text-[15px]"
-                >
-                  Back to Programs
-                </button>
+                <div className="mt-6 p-5 bg-amber-50/50 border border-amber-100 rounded-2xl text-left shadow-sm">
+                  <p className="text-red-700 font-bold text-[15px] mb-2">
+                    📢 Mandatory to Join WhatsApp Group 📲
+                  </p>
+                  <p className="text-gray-600 text-[13px] font-medium leading-relaxed">
+                    🔔 Note: All important announcements and updates will be shared only on the group.
+                  </p>
+                </div>
               </div>
               
               <p className="mt-8 text-gray-400 text-sm italic">

@@ -266,6 +266,29 @@ const Onboarding = () => {
                   </label>
                 </div>
 
+                <div className="flex justify-center">
+                  <div className="w-full max-w-[500px] space-y-4">
+                    <a 
+                      href={whatsappLink} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="bg-[#25D366] hover:bg-[#128C7E] !text-white text-[16px] font-bold py-3.5 px-8 rounded-xl flex items-center justify-center gap-3 transition-all transform hover:scale-[1.01] shadow-lg shadow-[#25D366]/20 group"
+                    >
+                      <FaWhatsapp className="text-xl group-hover:rotate-12 transition-transform" />
+                      Join WhatsApp Community
+                    </a>
+                    
+                    <div className="p-4 bg-amber-50/50 border border-amber-100 rounded-2xl text-left shadow-sm">
+                      <p className="text-red-700 font-bold text-[14px] mb-1.5 flex items-center gap-2">
+                        <span>📢</span> Mandatory to Join WhatsApp Group 📲
+                      </p>
+                      <p className="text-gray-600 text-[12px] font-medium leading-relaxed">
+                        🔔 Note: All important announcements and updates will be shared only on the group.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
                 <div className="border-t border-gray-100 pt-8 mt-4 flex flex-col md:flex-row md:items-center justify-between gap-4">
                   <button 
                     type="submit" 

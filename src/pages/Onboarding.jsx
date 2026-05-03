@@ -11,7 +11,8 @@ const Onboarding = () => {
     domain: '',
     state: '',
     role: '',
-    verified: false
+    verified: false,
+    shortIntro: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [whatsappLink, setWhatsappLink] = useState('https://chat.whatsapp.com/FOQ0mur19NsKHjR5907WMb');
@@ -207,6 +208,21 @@ const Onboarding = () => {
                       className="w-full px-4 py-3 bg-[#f8f9fa] border border-[#e5e7eb] rounded-lg focus:outline-none focus:ring-1 focus:ring-[#1e3a8a] focus:border-[#1e3a8a] transition-colors text-[15px] placeholder-gray-400"
                     />
                   </div>
+                </div>
+
+                <div className="space-y-2">
+                  <label className="block text-[13px] font-bold text-[#333] uppercase tracking-wide">
+                    short intro about you why do you want this internship <span className="text-red-500">*</span>
+                  </label>
+                  <textarea 
+                    name="shortIntro"
+                    required
+                    placeholder="Tell us a bit about yourself and your motivation..." 
+                    value={formData.shortIntro}
+                    onChange={handleChange}
+                    rows="4"
+                    className="w-full px-4 py-3 bg-[#f8f9fa] border border-[#e5e7eb] rounded-lg focus:outline-none focus:ring-1 focus:ring-[#1e3a8a] focus:border-[#1e3a8a] transition-colors text-[15px] placeholder-gray-400 resize-none"
+                  ></textarea>
                 </div>
 
                 <div className="space-y-3 pt-2">

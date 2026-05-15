@@ -210,7 +210,7 @@ const Onboarding = () => {
                   </div>
                 </div>
 
-                <div className="space-y-2">
+                {/* <div className="space-y-2">
                   <label className="block text-[13px] font-bold text-[#333] uppercase tracking-wide">
                     short intro about you why do you want this internship <span className="text-red-500">*</span>
                   </label>
@@ -223,7 +223,7 @@ const Onboarding = () => {
                     rows="4"
                     className="w-full px-4 py-3 bg-[#f8f9fa] border border-[#e5e7eb] rounded-lg focus:outline-none focus:ring-1 focus:ring-[#1e3a8a] focus:border-[#1e3a8a] transition-colors text-[15px] placeholder-gray-400 resize-none"
                   ></textarea>
-                </div>
+                </div> */}
 
                 <div className="space-y-3 pt-2">
                   <label className="block text-[13px] font-bold text-[#333] uppercase tracking-wide">
@@ -275,7 +275,7 @@ const Onboarding = () => {
                       className="bg-[#25D366] hover:bg-[#128C7E] !text-white text-[16px] font-bold py-3.5 px-8 rounded-xl flex items-center justify-center gap-3 transition-all transform hover:scale-[1.01] shadow-lg shadow-[#25D366]/20 group"
                     >
                       <FaWhatsapp className="text-xl group-hover:rotate-12 transition-transform" />
-                      Join WhatsApp Community
+                      Join Intern Community
                     </a>
                     
                     <div className="p-4 bg-amber-50/50 border border-amber-100 rounded-2xl text-left shadow-sm">
